@@ -1,0 +1,40 @@
+# Dev Session 01.06.2023 
+
+- Discussion on Blockchain System Design
+  - => Decide on one standard and focus on it
+  - => Companies don't have a system for tracking ESG Data
+  - => Often manuall input 
+  - => Look how other companies do the tracking of battery supplies 
+  - => Tomas will provide us some rading pointers on how others show
+  - => Maybe rethink channel design away from 1:1 channels
+  - => Data should not be stored on the chain 
+  - Having a third party as a managing entity for the network
+  - => That is a justified assumption, can be considered given
+  - What data should/needs to be publicly available?
+    - Channels vs. private data collections - best practices
+  - Cross channel/chaincode invocation for auditing the supply chain
+  - Use of Identity Mixer in "public" channels to obscure business relations
+  - => Might be a generlly good solution to use on channels with multiple entities
+- Are our assumptions about auditors justified?
+  - Third party that certifies a supplier and verifies its ESG compliance
+    - => Part of our task: How is the justification of input. 
+    - => Just believing a given number is not sufficient
+    - => How they do it in detail 
+    - => Just yes and no questions from the auditor are not sufficient
+      - => Need some answers on how the auditor came to the its conclusion 
+      - => Look how certification is done by entities. 
+      - => Design the argument on how something can be checked. 
+      - => At some point the trust chain needs to stop, however generally trusting a company is not sufficient 
+      - => Example: Picture/Documents being uploaded, to be at hand for verification 
+        - => Dont need automated checks for all metrics right away. 
+  - Bridges the gap between real and digital world
+- Example clusters size and deployment
+  - Ideally totally dockerized, up and running in no time 
+  - How large should an exemplary supply chain be for demo purposes?
+  - => small chain with 4-5 orgs should be sufficient 
+  - => explain how the exiciting demo can be scaled and why its not necessary for our demo
+  - Can we use the Hyperledger Fabric test-network as a starting point?
+  - => Not recommended, start network config from scratch
+- Outlook: Style of the Midterm Presentation
+  - Pitch vs. scientific/informativ presentation
+  - Important contents

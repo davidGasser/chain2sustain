@@ -1,0 +1,32 @@
+@startuml
+actor "Raw Material Supplier" as supplier
+actor "Battery Part Manufacturer" as partManuf
+actor "Car Manufacturer" as carManuf
+actor "Customer" as customer
+actor "Auditor 1" as auditor1
+actor "Auditor 2" as auditor2
+
+database "Channel All" as db
+database "Trade Log Channel 1" as sec_db1
+database "Trade Log Channel 2" as sec_db2
+
+supplier --> sec_db1: Logs supply trade details
+auditor1 --> db: Issues certificate for raw materials
+
+supplier --> partManuf: Trades raw materials
+supplier --> sec_db1: Logs trade details
+partManuf --> sec_db1: Logs part manufacturing trade details
+auditor1 --> db: Issues certificate for part manufacturing
+
+partManuf --> carManuf: Trades battery parts
+partManuf --> sec_db2: Logs trade details
+carManuf --> sec_db2: Logs battery and car manufacturing trade details
+auditor2 --> db: Issues certificate for car manufacturing
+
+carManuf --> customer: Sells car
+carManuf --> sec_db2: Logs trade details
+customer --> db: Verifies manufacturing history
+
+auditor1 --> sec_db1: Oversee the process and verify compliance
+auditor2 --> sec_db2: Oversee the process and verify compliance
+@enduml

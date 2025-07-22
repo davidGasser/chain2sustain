@@ -1,0 +1,30 @@
+@startuml
+abstract class "Public Certificate" as public_cert {
+    +ID
+    +Manufacturer ID
+    +Date
+    +Quality Details
+    +Child Labor (Yes/No)
+    +Renewability Score
+    +Water Waste Level
+}
+
+class "Raw Material Certificate" as raw_cert {
+    +Material Type
+    +Quantity
+}
+
+class "Battery Part Certificate" as part_cert {
+    +Part Type
+    +Material ID (used)
+}
+
+class "Car Manufacturing Certificate" as car_cert {
+    +Battery Part ID (used)
+    +Car Model
+}
+
+public_cert <|-- raw_cert
+public_cert <|-- part_cert
+public_cert <|-- car_cert
+@enduml
