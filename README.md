@@ -22,4 +22,3 @@
 |Topic| Link |
 |---|---|
 | Scalability | https://www.ibm.com/blog/does-hyperledger-fabric-perform-at-scale/ |
-| Miro | https://miro.com/welcomeonboard/YjZWOW90T05PNGZzc3laZ0h2TmVUTjd2SlRqMHU0Wkk5TEV6RUNuWEM2R2FwdVY4OGhIQmJGWEhPWlVFMVNzZnwzMDc0NDU3MzUyOTM0ODI5MDUxfDI=?share_link_id=172309816148 | 
