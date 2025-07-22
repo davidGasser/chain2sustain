@@ -3,11 +3,11 @@
 
 ## Team Information 
 ### Team Members
-| Name | Email |
-|---|---|
-| David Gasser | davidgasser12@gmail.com |
-| Mehmet Eren Turanboy | mehmet.turanboy@gmail.com |
-| Felix Myhsok | felix.myhsok@tum.de |
+| Name |
+|---|
+| David Gasser |
+| Mehmet Eren Turanboy |
+| Felix Myhsok |
 
 ## Project Information
 - The developed chaincode can be founde in the `chaincodes/` directory. 
@@ -18,13 +18,8 @@
 ## Report
 [Final Report (PDF)](DLT4PI___Final_Report.pdf)
 
-## Meeting Rooms and Tools
-|Tool| Link |
-|---|---|
-| Zoom | Meeting-ID: 635 0258 5714, Kenncode: 169590, [link](https://tum-conf.zoom.us/j/63502585714?pwd=LzdLMmx6UUhJTnA0enBLc2dZZG5rdz09) |
-| Miro | https://miro.com/welcomeonboard/YjZWOW90T05PNGZzc3laZ0h2TmVUTjd2SlRqMHU0Wkk5TEV6RUNuWEM2R2FwdVY4OGhIQmJGWEhPWlVFMVNzZnwzMDc0NDU3MzUyOTM0ODI5MDUxfDI=?share_link_id=172309816148 | 
-
 ## Additional Information
 |Topic| Link |
 |---|---|
 | Scalability | https://www.ibm.com/blog/does-hyperledger-fabric-perform-at-scale/ |
+| Miro | https://miro.com/welcomeonboard/YjZWOW90T05PNGZzc3laZ0h2TmVUTjd2SlRqMHU0Wkk5TEV6RUNuWEM2R2FwdVY4OGhIQmJGWEhPWlVFMVNzZnwzMDc0NDU3MzUyOTM0ODI5MDUxfDI=?share_link_id=172309816148 | 
