@@ -1,0 +1,95 @@
+"$schema": https://github.com/hyperledger-labs/fablo/releases/download/1.1.0/schema.json
+global:
+  fabricVersion: 2.4.2
+  tls: false
+orgs:
+  - organization:
+      name: Orderer
+      domain: root.com
+    orderers:
+      - groupName: group1
+        prefix: orderer
+        type: solo
+        instances: 1 
+        db: CouchDb
+  - organization:
+      name: Org1
+      domain: org1.example.com
+      tools:
+        fabloRest: true
+        explorer: true
+      db: CouchDb
+    peer:
+      instances: 3
+  - organization:
+      name: Org2
+      domain: org2.example.com
+      db: CouchDb
+    peer:
+      instances: 2
+  - organization:
+      name: Org3
+      domain: org3.example.com
+      db: CouchDb
+    peer:
+      instances: 3
+channels:
+  - name: my-channel1
+    orgs:
+      - name: Org1
+        peers:
+          - peer0
+          - peer1
+          - peer2
+      - name: Org2
+        peers:
+          - peer0
+          - peer1
+      - name: Org3
+        peers:
+          - peer0
+          - peer1
+          - peer2
+chaincodes:
+  - name: transferAssets
+    version: 0.0.1
+    lang: golang
+    channel: my-channel1
+    init: '{"Args":[]}'
+    endorsement: OR('Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member')
+    directory: "./chaincodes/transferAssetsCC"
+    privateData:
+      - name: Org1MSPPrivateCollection
+        orgNames:
+          - Org1
+      - name: Org2MSPPrivateCollection
+        orgNames:
+          - Org1
+          - Org2
+      - name: Org3MSPPrivateCollection
+        orgNames:
+          - Org1
+          - Org3
+      - name: shippingCollection
+        orgNames:
+          - Org1
+          - Org2
+          - Org3
+
+  - name: emissionsAudit
+    version: 0.0.1
+    lang: golang
+    channel: my-channel1
+    init: '{"Args":[]}'
+    endorsement: OR('Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member')
+    directory: "./chaincodes/emissionsAuditCC"
+    privateData:
+      - name: Org1MSPPrivateCollectionw
+        orgNames:
+          - Org1
+      - name: Org2MSPPrivateCollectionw
+        orgNames:
+          - Org2
+      - name: Org3MSPPrivateCollectionw
+        orgNames:
+          - Org3

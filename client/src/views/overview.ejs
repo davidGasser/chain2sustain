@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Overview</title>
+  <%- include('head.ejs') %>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px 20px;
+      }
+
+      .page-title {
+        margin-bottom: 30px;
+      }
+    </style>
+</head>
+
+<body>
+  <%- include('navbar') %>
+    <div class="container">
+      <h1 class="page-title">Overview</h1>
+      <form action="/submit_overview" method="POST" enctype="multipart/form-data">
+        <!-- Input fields -->
+        <div class="mb-3">
+          <label for="id" class="form-label">Product ID:</label>
+          <textarea id="id" name="id" rows="4" class="form-control"><%= inputData ? inputData.id : '' %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <% if (result) { %>
+      <div class="result">
+        <h3>Result:</h3>
+        <p><%= result %></p>
+      </div>
+    <% } %>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

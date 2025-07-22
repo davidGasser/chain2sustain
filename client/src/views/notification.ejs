@@ -1,0 +1,56 @@
+<!-- Notification container -->
+<style>
+  /* Styles for notifications */
+  .notification {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+</style>
+<div id="notification-container">
+  <% if (successMsg) { %>
+    <p id="notification-message" class="notification success d-flex justify-content-between align-items-center">
+      <%= successMsg %>
+        <button id="notification-close" class="btn-close" aria-label="Close"></button>
+    </p>
+    <% } else if (errorMsg) { %>
+      <p id="notification-message" class="notification error d-flex justify-content-between align-items-center">
+        <%= errorMsg %>
+          <button id="notification-close" class="btn-close" aria-label="Close"></button>
+      </p>
+      <% } %>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const notificationContainer = document.getElementById('notification-container');
+    const notificationMessage = document.getElementById('notification-message');
+    const closeButton = document.getElementById('notification-close');
+
+    // Function to remove the notification message
+    const removeNotification = () => {
+      if (notificationMessage) {
+        notificationContainer.removeChild(notificationMessage);
+      }
+    };
+
+    // Function to add click event on the close button
+    const addCloseButtonClickEvent = () => {
+      if (closeButton) {
+        closeButton.addEventListener('click', removeNotification);
+      }
+    };
+
+    addCloseButtonClickEvent();
+  });
+</script>

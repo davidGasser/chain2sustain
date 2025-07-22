@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings</title>
+    <%- include('head.ejs') %>
+        <style></style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <%- include('navbar') %>
+        <div class="container">
+            <h1 class="page-title">Gateway Configuration</h1>
+            <!-- Notification container -->
+            <%- include('notification') %>
+                <div>
+                    <!-- Rest of the Form -->
+                    <form action="/submit_settings" method="POST" enctype="multipart/form-data">
+                        <!-- Dropdown Menu for Preconfigured Settings -->
+                        <div class="form-group">
+                            <br>
+                            <h3 for="preconfiguredSettings">Preconfigured Settings:</h3>
+                            <select id="preconfiguredSettings" name="preconfiguredSettings" class="form-select">
+                                <option value="">Select a Organisation</option>
+                                <option value="Org1">Organisation 1</option>
+                                <option value="Org2">Organisation 2</option>
+                                <option value="Org3">Organisation 3</option>
+                            </select>
+                        </div>
+                        <br>
+                        <h3>Manual Configuration:</h3>
+                        <div class="form-group">
+                            <label for="gatewayAddress">Gateway Address:</label>
+                            <input type="text" id="gatewayAddress" name="gatewayAddress"
+                                value="<%= settingsData ? settingsData.gatewayAddress : '' %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationID">Organization ID:</label>
+                            <input type="text" id="organizationID" name="organizationID"
+                                value="<%= settingsData ? settingsData.organizationID : '' %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="certificatePath">Path to Identity Certificate:</label>
+                            <input type="text" id="certificatePath" name="certificatePath"
+                                value="<%= settingsData ? settingsData.certificatePath : '' %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="privateKeyPath">Path to Private Key:</label>
+                            <input type="text" id="privateKeyPath" name="privateKeyPath"
+                                value="<%= settingsData ? settingsData.privateKeyPath : '' %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="tlsRootCertPath">Path to TLS Certificate of the root CA:</label>
+                            <input type="text" id="tlsRootCertPath" name="tlsRootCertPath"
+                                value="<%= settingsData ? settingsData.tlsRootCertPath : '' %>">
+                        </div>
+                        
+                        <div class="form-group submit-btn">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

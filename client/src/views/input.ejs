@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create Products</title>
+  <%- include('head.ejs') %>
+    <style></style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <%- include('navbar') %>
+    <div class="container">
+      <h1>Create Product</h1>
+      <!-- Notification container -->
+      <%- include('notification') %>
+
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+          <!-- Input fields -->
+          <div class="mb-3">
+            <label for="recipeID" class="form-label">ID of the recipe:</label>
+            <textarea id="recipeID" name="recipeID" rows="2" class="form-control"><%= inputData ? inputData.recipeID : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="assetName" class="form-label">Asset Name:</label>
+            <textarea id="assetName" name="assetName" rows="1" class="form-control"><%= inputData ? inputData.assetName : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="consumedAssetIDs" class="form-label">Consumed IDs:</label>
+            <textarea id="consumedAssetIDs" name="consumedAssetIDs" rows="2" class="form-control"><%= inputData ? inputData.consumedAssetIDs : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="emissionsTokens" class="form-label">Used Emission Tokens:</label>
+            <textarea id="emissionsTokens" name="emissionsTokens" rows="2"
+              class="form-control"><%= inputData ? inputData.emissionsTokens : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="additionalInfo" class="form-label">Additional Information:</label>
+            <input type="text" id="additionalInfo" name="additionalInfo" class="form-control"
+              value="<%= inputData ? inputData.additionalInfo : '' %>">
+          </div>
+          <div class="mb-3">
+            <label for="file" class="form-label">Supporting Document:</label>
+            <input type="file" id="file" name="file" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

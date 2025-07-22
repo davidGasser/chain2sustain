@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Transfer Products</title>
+  <%- include('head.ejs') %>
+    <style></style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <%- include('navbar') %>
+    <div class="container">
+      <h1>Transfer Product</h1>
+      <!-- Notification container -->
+      <%- include('notification') %>
+
+        <form action="/submit_transfer" method="POST" enctype="multipart/form-data">
+          <!-- Input fields -->
+          <div class="mb-3">
+            <label for="shippingID" class="form-label">ID of the Transfer:</label>
+            <textarea id="shippingID" name="shippingID" rows="1" class="form-control"><%= transferData ? transferData.shippingID : '' %></textarea>
+          </div>
+          <div>
+            <label for="quantity" class="form-label">Quantity of the product:</label>
+            <textarea id="quantity" name="quantity" rows="1" class="form-control"><%= transferData ? transferData.quantity : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="list_ID" class="form-label">List ID:</label>
+            <textarea id="list_ID" name="list_ID" rows="1"
+              class="form-control"><%= transferData ? transferData.list_ID : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="assetName" class="form-label">Name of the asset:</label>
+            <textarea id="assetName" name="assetName" rows="1"
+              class="form-control"><%= transferData ? transferData.assetName : '' %></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="emissionsTokens" class="form-label">Used Emissions Tokens:</label>
+            <textarea id="emissionsTokens" name="emissionsTokens" rows="1"
+              class="form-control"><%= transferData ? transferData.emissionsTokens : '' %></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Transfer</button>
+          <button type="submit" formaction="/alternative_route" class="btn btn-primary">Confirm Transfer</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
