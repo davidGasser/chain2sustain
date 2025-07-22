@@ -1,5 +1,6 @@
 # Chain2Sustain
 ![Chain2Sustain Logo](doc/project_icon/logo.png)
+[Presentation of the project](doc/final_presentation/DLT4PI_Final_Presentation.pdf)
 
 ## Team Information 
 ### Team Members
