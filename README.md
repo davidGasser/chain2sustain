@@ -16,7 +16,7 @@
 - Additional documentation alongside with figures created during the project can be found in the `doc/` directory.
 
 ## Report
-[Link to Report on ShareLatex](https://sharelatex.tum.de/3963762212dtmcxscxzznp)
+[Final Report (PDF)](DLT4PI___Final_Report.pdf)
 
 ## Meeting Rooms and Tools
 |Tool| Link |
